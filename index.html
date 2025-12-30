@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trading Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Trading Calculator</h1>
+    
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab('profitLoss')">Profit/Loss</button>
+      <button class="tab-btn" onclick="showTab('riskReward')">Risk-Reward</button>
+      <button class="tab-btn" onclick="showTab('brokerage')">Brokerage</button>
+    </div>
+
+    <div class="calculator">
+      <!-- Profit/Loss -->
+      <div class="tab-content" id="profitLoss">
+        <input type="number" id="buyPrice" placeholder="Buy Price">
+        <input type="number" id="sellPrice" placeholder="Sell Price">
+        <input type="number" id="quantity" placeholder="Quantity">
+        <button onclick="calculateProfitLoss()">Calculate</button>
+        <div class="result" id="plResult"></div>
+      </div>
+
+      <!-- Risk-Reward -->
+      <div class="tab-content" id="riskReward" style="display:none;">
+        <input type="number" id="entryPrice" placeholder="Entry Price">
+        <input type="number" id="stopLoss" placeholder="Stop Loss">
+        <input type="number" id="targetPrice" placeholder="Target Price">
+        <button onclick="calculateRiskReward()">Calculate</button>
+        <div class="result" id="rrResult"></div>
+      </div>
+
+      <!-- Brokerage -->
+      <div class="tab-content" id="brokerage" style="display:none;">
+        <input type="number" id="bBuyPrice" placeholder="Buy Price">
+        <input type="number" id="bSellPrice" placeholder="Sell Price">
+        <input type="number" id="bQuantity" placeholder="Quantity">
+        <input type="number" id="brokeragePercent" placeholder="Brokerage %">
+        <button onclick="calculateBrokerage()">Calculate</button>
+        <div class="result" id="brResult"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
