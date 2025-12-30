@@ -7,12 +7,9 @@ function showTab(tabName) {
 
   document.getElementById(tabName).style.display = "block";
   document.querySelector(`.tab-btn[onclick="showTab('${tabName}')"]`).classList.add("active");
-
-  // Clear previous results
   document.querySelectorAll(".result").forEach(r => r.innerHTML = "");
 }
 
-// Profit/Loss Calculator
 function calculateProfitLoss() {
   const buy = parseFloat(document.getElementById("buyPrice").value);
   const sell = parseFloat(document.getElementById("sellPrice").value);
@@ -29,7 +26,6 @@ function calculateProfitLoss() {
   `;
 }
 
-// Risk-Reward Calculator
 function calculateRiskReward() {
   const entry = parseFloat(document.getElementById("entryPrice").value);
   const stop = parseFloat(document.getElementById("stopLoss").value);
@@ -46,7 +42,6 @@ function calculateRiskReward() {
   document.getElementById("rrResult").innerHTML = `Risk-Reward Ratio: ${rr.toFixed(2)}`;
 }
 
-// Brokerage Calculator
 function calculateBrokerage() {
   const buy = parseFloat(document.getElementById("bBuyPrice").value);
   const sell = parseFloat(document.getElementById("bSellPrice").value);
